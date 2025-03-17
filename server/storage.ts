@@ -327,38 +327,39 @@ export class MemStorage implements IStorage {
         artistId: 7,
         status: "upcoming",
         isFeatured: false,
-        imageUrl: "https://i.imgur.com/0kIb4Kh.jpg"
+        imageUrl: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=400&auto=format&fit=crop"
       }
     ];
     
-    concerts.forEach(concert => {
+    for (const concert of concerts) {
       const createdConcert = this.createConcert(concert);
       
-      // Add ticket types for each concert
+      // Add ticket types for each concert after concert is created (not a Promise)
+      const concertId = createdConcert.id;
       const ticketTypes = [
         {
-          concertId: createdConcert.id,
+          concertId,
           name: "VIP",
           price: 5000,
           quantity: 100,
           description: "Best seats with meet & greet"
         },
         {
-          concertId: createdConcert.id,
+          concertId,
           name: "Gold",
           price: 3500,
           quantity: 500,
           description: "Premium seating close to stage"
         },
         {
-          concertId: createdConcert.id,
+          concertId,
           name: "Silver",
           price: 2000,
           quantity: 1000,
           description: "Good view of the stage"
         },
         {
-          concertId: createdConcert.id,
+          concertId,
           name: "General Admission",
           price: 1000,
           quantity: 2000,
@@ -366,10 +367,10 @@ export class MemStorage implements IStorage {
         }
       ];
       
-      ticketTypes.forEach(ticketType => {
+      for (const ticketType of ticketTypes) {
         this.createTicketType(ticketType);
-      });
-    });
+      }
+    }
   }
 
   // User methods
