@@ -184,9 +184,9 @@ const VenueDetailPage = () => {
                     <h2 className="text-2xl font-bold mb-4">About {venue.name}</h2>
                     
                     <p className="mb-6">
-                      {venue.name} is one of the top concert venues in {venue.location}, Philippines.
-                      With a capacity of {venue.capacity.toLocaleString()} people, it's the perfect place
-                      for both intimate shows and large-scale performances by Filipino and international artists.
+                      {venue.description || `${venue.name} is one of the top concert venues in ${venue.location}, Philippines.
+                      With a capacity of ${venue.capacity.toLocaleString()} people, it's the perfect place
+                      for both intimate shows and large-scale performances by Filipino and international artists.`}
                     </p>
                     
                     <div className="bg-neutral-50 rounded-lg p-4 mb-6">
@@ -230,6 +230,22 @@ const VenueDetailPage = () => {
                       </ul>
                     </div>
                     
+                    {venue.amenities && (
+                      <div className="mb-6">
+                        <h3 className="text-xl font-bold mb-2">Amenities</h3>
+                        <div className="bg-neutral-50 rounded-lg p-4">
+                          <ul className="space-y-1">
+                            {venue.amenities && venue.amenities.split(',').map((amenity: string, index: number) => (
+                              <li key={index} className="flex items-center">
+                                <CheckCircle2 className="h-4 w-4 mr-2 text-primary flex-shrink-0" />
+                                <span>{amenity.trim()}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    )}
+                    
                     <h3 className="text-xl font-bold mb-2">Transportation & Parking</h3>
                     <p>
                       The venue is easily accessible by public and private transportation.
@@ -242,67 +258,96 @@ const VenueDetailPage = () => {
                 <TabsContent value="facilities">
                   <h2 className="text-2xl font-bold mb-6">Facilities & Amenities</h2>
                   
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-                    <div className="flex items-start p-4 bg-neutral-50 rounded-lg">
-                      <ParkingSquare className="h-6 w-6 text-primary mr-3 flex-shrink-0" />
-                      <div>
-                        <h3 className="font-bold mb-1">Parking</h3>
-                        <p className="text-sm text-neutral-600">
-                          Secure parking available with 500+ spaces
-                        </p>
+                  {venue.amenities ? (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                      {venue.amenities && venue.amenities.split(',').map((amenity: string, index: number) => {
+                        // Determine which icon to show based on amenity text
+                        let Icon = CheckCircle2;
+                        const amenityLower = amenity.trim().toLowerCase();
+                        
+                        if (amenityLower.includes('parking')) Icon = ParkingSquare;
+                        else if (amenityLower.includes('food') || amenityLower.includes('concession')) Icon = Utensils;
+                        else if (amenityLower.includes('wifi')) Icon = Wifi;
+                        else if (amenityLower.includes('access')) Icon = Accessibility;
+                        else if (amenityLower.includes('vip') || amenityLower.includes('premium')) Icon = CheckCircle2;
+                        else if (amenityLower.includes('coffee') || amenityLower.includes('beverage')) Icon = Coffee;
+                        
+                        return (
+                          <div key={index} className="flex items-start p-4 bg-neutral-50 rounded-lg">
+                            <Icon className="h-6 w-6 text-primary mr-3 flex-shrink-0" />
+                            <div>
+                              <h3 className="font-bold mb-1">{amenity.trim()}</h3>
+                              <p className="text-sm text-neutral-600">
+                                Available at {venue.name}
+                              </p>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  ) : (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                      <div className="flex items-start p-4 bg-neutral-50 rounded-lg">
+                        <ParkingSquare className="h-6 w-6 text-primary mr-3 flex-shrink-0" />
+                        <div>
+                          <h3 className="font-bold mb-1">Parking</h3>
+                          <p className="text-sm text-neutral-600">
+                            Secure parking available with 500+ spaces
+                          </p>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start p-4 bg-neutral-50 rounded-lg">
+                        <Coffee className="h-6 w-6 text-primary mr-3 flex-shrink-0" />
+                        <div>
+                          <h3 className="font-bold mb-1">Concessions</h3>
+                          <p className="text-sm text-neutral-600">
+                            Multiple food and beverage stands throughout
+                          </p>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start p-4 bg-neutral-50 rounded-lg">
+                        <Utensils className="h-6 w-6 text-primary mr-3 flex-shrink-0" />
+                        <div>
+                          <h3 className="font-bold mb-1">Food Court</h3>
+                          <p className="text-sm text-neutral-600">
+                            Various dining options including local Filipino cuisine
+                          </p>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start p-4 bg-neutral-50 rounded-lg">
+                        <Wifi className="h-6 w-6 text-primary mr-3 flex-shrink-0" />
+                        <div>
+                          <h3 className="font-bold mb-1">Free Wi-Fi</h3>
+                          <p className="text-sm text-neutral-600">
+                            High-speed internet access throughout the venue
+                          </p>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start p-4 bg-neutral-50 rounded-lg">
+                        <Accessibility className="h-6 w-6 text-primary mr-3 flex-shrink-0" />
+                        <div>
+                          <h3 className="font-bold mb-1">Accessibility</h3>
+                          <p className="text-sm text-neutral-600">
+                            Wheelchair accessible facilities and seating areas
+                          </p>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start p-4 bg-neutral-50 rounded-lg">
+                        <CheckCircle2 className="h-6 w-6 text-primary mr-3 flex-shrink-0" />
+                        <div>
+                          <h3 className="font-bold mb-1">VIP Lounges</h3>
+                          <p className="text-sm text-neutral-600">
+                            Premium areas with exclusive services and amenities
+                          </p>
+                        </div>
                       </div>
                     </div>
-                    
-                    <div className="flex items-start p-4 bg-neutral-50 rounded-lg">
-                      <Coffee className="h-6 w-6 text-primary mr-3 flex-shrink-0" />
-                      <div>
-                        <h3 className="font-bold mb-1">Concessions</h3>
-                        <p className="text-sm text-neutral-600">
-                          Multiple food and beverage stands throughout
-                        </p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start p-4 bg-neutral-50 rounded-lg">
-                      <Utensils className="h-6 w-6 text-primary mr-3 flex-shrink-0" />
-                      <div>
-                        <h3 className="font-bold mb-1">Food Court</h3>
-                        <p className="text-sm text-neutral-600">
-                          Various dining options including local Filipino cuisine
-                        </p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start p-4 bg-neutral-50 rounded-lg">
-                      <Wifi className="h-6 w-6 text-primary mr-3 flex-shrink-0" />
-                      <div>
-                        <h3 className="font-bold mb-1">Free Wi-Fi</h3>
-                        <p className="text-sm text-neutral-600">
-                          High-speed internet access throughout the venue
-                        </p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start p-4 bg-neutral-50 rounded-lg">
-                      <Accessibility className="h-6 w-6 text-primary mr-3 flex-shrink-0" />
-                      <div>
-                        <h3 className="font-bold mb-1">Accessibility</h3>
-                        <p className="text-sm text-neutral-600">
-                          Wheelchair accessible facilities and seating areas
-                        </p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start p-4 bg-neutral-50 rounded-lg">
-                      <CheckCircle2 className="h-6 w-6 text-primary mr-3 flex-shrink-0" />
-                      <div>
-                        <h3 className="font-bold mb-1">VIP Lounges</h3>
-                        <p className="text-sm text-neutral-600">
-                          Premium areas with exclusive services and amenities
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+                  )}
                   
                   <h3 className="font-bold text-xl mb-4">Seating Layout</h3>
                   <div className="aspect-video rounded-lg overflow-hidden bg-neutral-100 flex items-center justify-center">

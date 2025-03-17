@@ -348,28 +348,45 @@ export class MemStorage implements IStorage {
           name: "VIP",
           price: 5000,
           quantity: 100,
-          description: "Best seats with meet & greet"
+          description: "Best seats with meet & greet",
+          section: "Front",
+          rowStart: 1,
+          rowEnd: 5,
+          seatsPerRow: 20,
+          isReserved: true
         },
         {
           concertId,
           name: "Gold",
           price: 3500,
           quantity: 500,
-          description: "Premium seating close to stage"
+          description: "Premium seating close to stage",
+          section: "Center",
+          rowStart: 6,
+          rowEnd: 15,
+          seatsPerRow: 30,
+          isReserved: true
         },
         {
           concertId,
           name: "Silver",
           price: 2000,
           quantity: 1000,
-          description: "Good view of the stage"
+          description: "Good view of the stage",
+          section: "Rear",
+          rowStart: 16,
+          rowEnd: 30,
+          seatsPerRow: 35,
+          isReserved: true
         },
         {
           concertId,
           name: "General Admission",
           price: 1000,
           quantity: 2000,
-          description: "Standing area"
+          description: "Standing area",
+          section: "Floor",
+          isReserved: false
         }
       ];
       

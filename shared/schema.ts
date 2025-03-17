@@ -92,6 +92,12 @@ export const ticketTypes = pgTable("ticket_types", {
   name: text("name").notNull(),
   price: doublePrecision("price").notNull(),
   quantity: integer("quantity").notNull(),
+  description: text("description"),
+  section: text("section"),
+  rowStart: integer("row_start"),
+  rowEnd: integer("row_end"),
+  seatsPerRow: integer("seats_per_row"),
+  isReserved: boolean("is_reserved").default(false),
 });
 
 export const insertTicketTypeSchema = createInsertSchema(ticketTypes).pick({
@@ -99,6 +105,12 @@ export const insertTicketTypeSchema = createInsertSchema(ticketTypes).pick({
   name: true,
   price: true,
   quantity: true,
+  description: true,
+  section: true,
+  rowStart: true,
+  rowEnd: true,
+  seatsPerRow: true,
+  isReserved: true,
 });
 
 // Orders
