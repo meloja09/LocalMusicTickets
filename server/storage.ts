@@ -135,6 +135,145 @@ export class MemStorage implements IStorage {
     categories.forEach(category => {
       this.createCategory(category);
     });
+
+    // Add sample artists
+    const artists = [
+      {
+        name: "Sarah Geronimo",
+        genre: "Pop",
+        bio: "Sarah Geronimo is a Filipino singer, actress and television personality. She began her career with the release of her debut album in 2003.",
+        imageUrl: "https://i.imgur.com/X0xNoXu.jpg"
+      },
+      {
+        name: "Bamboo",
+        genre: "Rock",
+        bio: "Bamboo is one of the most influential rock musicians in the Philippines, known as the vocalist of bands such as Bamboo and Rivermaya.",
+        imageUrl: "https://i.imgur.com/aVnJnuC.jpg"
+      },
+      {
+        name: "Ben&Ben",
+        genre: "Folk",
+        bio: "Ben&Ben is a nine-piece Filipino folk-pop band known for their heartfelt lyrics and unique sound that combines traditional Filipino folk with contemporary elements.",
+        imageUrl: "https://i.imgur.com/9VX12CQ.jpg"
+      },
+      {
+        name: "Gloc-9",
+        genre: "Hip-Hop",
+        bio: "Gloc-9 is a Filipino rapper, songwriter, and record producer. He is considered one of the most successful and respected Filipino rappers.",
+        imageUrl: "https://i.imgur.com/jzuVkIM.jpg"
+      }
+    ];
+    
+    artists.forEach(artist => {
+      this.createArtist(artist);
+    });
+
+    // Add sample venues
+    const venues = [
+      {
+        name: "Araneta Coliseum",
+        address: "Araneta City, Cubao, Quezon City",
+        location: "Quezon City",
+        capacity: 15000,
+        imageUrl: "https://i.imgur.com/Y4jhrWn.jpg"
+      },
+      {
+        name: "Mall of Asia Arena",
+        address: "Mall of Asia Complex, Pasay City",
+        location: "Pasay City",
+        capacity: 20000,
+        imageUrl: "https://i.imgur.com/Y4jhrWn.jpg"
+      },
+      {
+        name: "Music Museum",
+        address: "Greenhills Shopping Center, San Juan City",
+        location: "San Juan",
+        capacity: 800,
+        imageUrl: "https://i.imgur.com/Y4jhrWn.jpg"
+      }
+    ];
+    
+    venues.forEach(venue => {
+      this.createVenue(venue);
+    });
+
+    // Add sample concerts
+    const now = new Date();
+    const nextMonth = new Date(now.getFullYear(), now.getMonth() + 1, now.getDate());
+    const twoMonthsFromNow = new Date(now.getFullYear(), now.getMonth() + 2, now.getDate());
+    
+    const concerts = [
+      {
+        title: "Pop Explosion",
+        date: nextMonth,
+        description: "Sarah Geronimo's biggest concert of the year featuring her latest hits and classic favorites.",
+        venueId: 1,
+        artistId: 1,
+        status: "upcoming",
+        isFeatured: true,
+        imageUrl: "https://i.imgur.com/0kIb4Kh.jpg"
+      },
+      {
+        title: "Rock Legends",
+        date: twoMonthsFromNow,
+        description: "Bamboo returns with a powerful rock concert showcasing timeless hits and new material.",
+        venueId: 2,
+        artistId: 2,
+        status: "upcoming",
+        isFeatured: true,
+        imageUrl: "https://i.imgur.com/0kIb4Kh.jpg"
+      },
+      {
+        title: "Folk Tales",
+        date: new Date(now.getFullYear(), now.getMonth() + 3, now.getDate()),
+        description: "Ben&Ben presents an intimate acoustic evening of folk music and storytelling.",
+        venueId: 3,
+        artistId: 3,
+        status: "upcoming",
+        isFeatured: false,
+        imageUrl: "https://i.imgur.com/0kIb4Kh.jpg"
+      }
+    ];
+    
+    concerts.forEach(concert => {
+      const createdConcert = this.createConcert(concert);
+      
+      // Add ticket types for each concert
+      const ticketTypes = [
+        {
+          concertId: createdConcert.id,
+          name: "VIP",
+          price: 5000,
+          quantity: 100,
+          description: "Best seats with meet & greet"
+        },
+        {
+          concertId: createdConcert.id,
+          name: "Gold",
+          price: 3500,
+          quantity: 500,
+          description: "Premium seating close to stage"
+        },
+        {
+          concertId: createdConcert.id,
+          name: "Silver",
+          price: 2000,
+          quantity: 1000,
+          description: "Good view of the stage"
+        },
+        {
+          concertId: createdConcert.id,
+          name: "General Admission",
+          price: 1000,
+          quantity: 2000,
+          description: "Standing area"
+        }
+      ];
+      
+      ticketTypes.forEach(ticketType => {
+        this.createTicketType(ticketType);
+      });
+    });
   }
 
   // User methods

@@ -394,7 +394,7 @@ const VenueDetailPage = () => {
           
           {venue.concerts && venue.concerts.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {venue.concerts.map((concert) => (
+              {venue.concerts.map((concert: Concert) => (
                 <Link href={`/concerts/${concert.id}`} key={concert.id}>
                   <Card className="overflow-hidden hover:shadow-md transition-shadow cursor-pointer h-full flex flex-col">
                     <div className="h-40 overflow-hidden bg-neutral-100">

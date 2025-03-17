@@ -383,7 +383,7 @@ const AdminConcerts = () => {
                                         </SelectItem>
                                       ))
                                     ) : (
-                                      <SelectItem value="" disabled>No artists available</SelectItem>
+                                      <SelectItem value="no-artists" disabled>No artists available</SelectItem>
                                     )}
                                   </SelectContent>
                                 </Select>
@@ -409,7 +409,7 @@ const AdminConcerts = () => {
                                   </FormControl>
                                   <SelectContent>
                                     {venuesLoading ? (
-                                      <SelectItem value="" disabled>Loading...</SelectItem>
+                                      <SelectItem value="loading" disabled>Loading...</SelectItem>
                                     ) : venues && venues.length > 0 ? (
                                       venues.map((venue) => (
                                         <SelectItem key={venue.id} value={venue.id.toString()}>
@@ -417,7 +417,7 @@ const AdminConcerts = () => {
                                         </SelectItem>
                                       ))
                                     ) : (
-                                      <SelectItem value="" disabled>No venues available</SelectItem>
+                                      <SelectItem value="none" disabled>No venues available</SelectItem>
                                     )}
                                   </SelectContent>
                                 </Select>
