@@ -2,6 +2,7 @@ import { useRoute, Link } from "wouter";
 import { useVenue, useConcerts } from "@/hooks/use-api";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Concert } from "@shared/schema";
 import {
   Breadcrumb,
   BreadcrumbItem,
