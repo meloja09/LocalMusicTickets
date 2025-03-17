@@ -204,28 +204,34 @@ export class MemStorage implements IStorage {
       this.createArtist(artist);
     });
 
-    // Add sample venues
+    // Add sample venues with enhanced information
     const venues = [
       {
         name: "Araneta Coliseum",
-        address: "Araneta City, Cubao, Quezon City",
+        address: "Araneta City, General Roxas Avenue, Cubao, Quezon City",
         location: "Quezon City",
         capacity: 15000,
-        imageUrl: "https://images.unsplash.com/photo-1556035511-3168381ea4d4?q=80&w=400&auto=format&fit=crop"
+        description: "The Smart Araneta Coliseum, known as the Big Dome, is a historic indoor arena in Quezon City. With a capacity of 15,000, it has hosted legendary events including the 'Thrilla in Manila' boxing match. Known for its excellent acoustics and sightlines, it remains one of the Philippines' premier concert venues for both international and local artists.",
+        amenities: "VIP boxes, multiple entrances, food concessionaires, parking facilities, accessibility features",
+        imageUrl: "https://images.unsplash.com/photo-1556035511-3168381ea4d4?q=80&w=600&auto=format&fit=crop"
       },
       {
         name: "Mall of Asia Arena",
-        address: "Mall of Asia Complex, Pasay City",
+        address: "Mall of Asia Complex, J.W. Diokno Boulevard, Pasay City",
         location: "Pasay City",
         capacity: 20000,
-        imageUrl: "https://images.unsplash.com/photo-1560281056-7fa93056a782?q=80&w=400&auto=format&fit=crop"
+        description: "The SM Mall of Asia Arena is a world-class indoor venue featuring state-of-the-art facilities and technology. With its 20,000 seating capacity and modern design, it hosts major concerts, international sporting events, and entertainment shows. The arena offers premium seating options and an immersive experience for all attendees.",
+        amenities: "Premium suites, corporate boxes, digital displays, surround sound system, multiple food outlets, merchandise stands",
+        imageUrl: "https://images.unsplash.com/photo-1560281056-7fa93056a782?q=80&w=600&auto=format&fit=crop"
       },
       {
         name: "Music Museum",
-        address: "Greenhills Shopping Center, San Juan City",
+        address: "Greenhills Shopping Center, Greenhills, San Juan City",
         location: "San Juan",
         capacity: 800,
-        imageUrl: "https://images.unsplash.com/photo-1521070144638-767ffe2fd402?q=80&w=400&auto=format&fit=crop"
+        description: "The Music Museum is an intimate performance venue known for its excellent acoustics and up-close concert experience. With a capacity of 800, it offers a more personal atmosphere for smaller shows and acoustic performances. The venue has hosted countless Filipino artists and has become an institution in the local music scene since opening in 1988.",
+        amenities: "Theater-style seating, professional sound system, bar service, cozy atmosphere, nearby dining options",
+        imageUrl: "https://images.unsplash.com/photo-1521070144638-767ffe2fd402?q=80&w=600&auto=format&fit=crop"
       }
     ];
     

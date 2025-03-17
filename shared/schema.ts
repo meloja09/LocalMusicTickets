@@ -46,6 +46,8 @@ export const venues = pgTable("venues", {
   location: text("location").notNull(),
   address: text("address").notNull(),
   capacity: integer("capacity").notNull(),
+  description: text("description"),
+  amenities: text("amenities"),
   imageUrl: text("image_url"),
 });
 
@@ -54,6 +56,8 @@ export const insertVenueSchema = createInsertSchema(venues).pick({
   location: true,
   address: true,
   capacity: true,
+  description: true,
+  amenities: true,
   imageUrl: true,
 });
 
