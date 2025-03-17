@@ -70,7 +70,7 @@ export interface IStorage {
   createCategory(category: InsertCategory): Promise<Category>;
 
   // Session store
-  sessionStore: session.SessionStore;
+  sessionStore: any;
 }
 
 export class MemStorage implements IStorage {
@@ -92,7 +92,7 @@ export class MemStorage implements IStorage {
   orderItemCounter: number;
   categoryCounter: number;
   
-  sessionStore: session.SessionStore;
+  sessionStore: any;
 
   constructor() {
     this.users = new Map();
@@ -150,7 +150,13 @@ export class MemStorage implements IStorage {
 
   async createUser(insertUser: InsertUser): Promise<User> {
     const id = this.userCounter++;
-    const user: User = { ...insertUser, id, isAdmin: false };
+    const user: User = { 
+      ...insertUser, 
+      id, 
+      isAdmin: false,
+      phone: insertUser.phone || null,
+      address: insertUser.address || null
+    };
     this.users.set(id, user);
     return user;
   }
@@ -180,7 +186,12 @@ export class MemStorage implements IStorage {
 
   async createArtist(insertArtist: InsertArtist): Promise<Artist> {
     const id = this.artistCounter++;
-    const artist: Artist = { ...insertArtist, id };
+    const artist: Artist = { 
+      ...insertArtist, 
+      id,
+      bio: insertArtist.bio || null,
+      imageUrl: insertArtist.imageUrl || null
+    };
     this.artists.set(id, artist);
     return artist;
   }
@@ -214,7 +225,11 @@ export class MemStorage implements IStorage {
 
   async createVenue(insertVenue: InsertVenue): Promise<Venue> {
     const id = this.venueCounter++;
-    const venue: Venue = { ...insertVenue, id };
+    const venue: Venue = { 
+      ...insertVenue, 
+      id,
+      imageUrl: insertVenue.imageUrl || null
+    };
     this.venues.set(id, venue);
     return venue;
   }
@@ -324,7 +339,13 @@ export class MemStorage implements IStorage {
 
   async createConcert(insertConcert: InsertConcert): Promise<Concert> {
     const id = this.concertCounter++;
-    const concert: Concert = { ...insertConcert, id };
+    const concert: Concert = { 
+      ...insertConcert, 
+      id,
+      status: insertConcert.status || 'upcoming',
+      imageUrl: insertConcert.imageUrl || null,
+      isFeatured: insertConcert.isFeatured || false
+    };
     this.concerts.set(id, concert);
     return concert;
   }
