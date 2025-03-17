@@ -161,6 +161,42 @@ export class MemStorage implements IStorage {
         genre: "Hip-Hop",
         bio: "Gloc-9 is a Filipino rapper, songwriter, and record producer. He is considered one of the most successful and respected Filipino rappers.",
         imageUrl: "https://i.imgur.com/jzuVkIM.jpg"
+      },
+      {
+        name: "Moira Dela Torre",
+        genre: "Pop",
+        bio: "Moira Dela Torre is a Filipino singer-songwriter known for her emotional ballads and heartfelt performances. She rose to fame after joining 'The Voice of the Philippines'.",
+        imageUrl: "https://i.imgur.com/X0xNoXu.jpg"
+      },
+      {
+        name: "Eraserheads",
+        genre: "Rock",
+        bio: "Eraserheads is one of the most iconic Filipino bands of all time, often compared to The Beatles for their influence on Philippine music. Their songs have become anthems for generations of Filipinos.",
+        imageUrl: "https://i.imgur.com/aVnJnuC.jpg"
+      },
+      {
+        name: "Ely Buendia",
+        genre: "Rock",
+        bio: "Ely Buendia is a Filipino musician, writer and director who is best known as the vocalist, guitarist and main songwriter of the legendary Filipino rock band Eraserheads.",
+        imageUrl: "https://i.imgur.com/aVnJnuC.jpg"
+      },
+      {
+        name: "Parokya ni Edgar",
+        genre: "Rock",
+        bio: "Parokya ni Edgar is a Filipino band formed in 1993, known for their humorous lyrics and versatile musical style that combines rock with other genres.",
+        imageUrl: "https://i.imgur.com/aVnJnuC.jpg"
+      },
+      {
+        name: "SB19",
+        genre: "Pop",
+        bio: "SB19 is a Filipino boy band trained under a Korean entertainment company. They are credited as the first Filipino idol group that has been trained under a Korean entertainment company.",
+        imageUrl: "https://i.imgur.com/X0xNoXu.jpg"
+      },
+      {
+        name: "December Avenue",
+        genre: "Rock",
+        bio: "December Avenue is a Filipino rock band formed in 2008. Their music mainly revolves around the subject of love and romantic relationships.",
+        imageUrl: "https://i.imgur.com/aVnJnuC.jpg"
       }
     ];
     
@@ -229,6 +265,66 @@ export class MemStorage implements IStorage {
         description: "Ben&Ben presents an intimate acoustic evening of folk music and storytelling.",
         venueId: 3,
         artistId: 3,
+        status: "upcoming",
+        isFeatured: false,
+        imageUrl: "https://i.imgur.com/0kIb4Kh.jpg"
+      },
+      {
+        title: "Words & Melodies",
+        date: new Date(now.getFullYear(), now.getMonth() + 2, now.getDate() + 7),
+        description: "Moira Dela Torre performs her emotional ballads in an intimate setting.",
+        venueId: 3,
+        artistId: 5,
+        status: "upcoming",
+        isFeatured: true,
+        imageUrl: "https://i.imgur.com/0kIb4Kh.jpg"
+      },
+      {
+        title: "OPM Reunion",
+        date: new Date(now.getFullYear(), now.getMonth() + 3, now.getDate() + 14),
+        description: "A special one-night concert featuring the legendary Eraserheads playing their timeless hits.",
+        venueId: 1,
+        artistId: 6,
+        status: "upcoming",
+        isFeatured: true,
+        imageUrl: "https://i.imgur.com/0kIb4Kh.jpg"
+      },
+      {
+        title: "Manila Sound",
+        date: new Date(now.getFullYear(), now.getMonth() + 4, now.getDate()),
+        description: "Parokya ni Edgar brings their unique humor and catchy tunes for a night of fun and music.",
+        venueId: 2,
+        artistId: 8,
+        status: "upcoming",
+        isFeatured: false,
+        imageUrl: "https://i.imgur.com/0kIb4Kh.jpg"
+      },
+      {
+        title: "Pinoy Pride",
+        date: new Date(now.getFullYear(), now.getMonth() + 3, now.getDate() + 21),
+        description: "SB19 showcases their dynamic performances and catchy songs in this high-energy concert.",
+        venueId: 2,
+        artistId: 9,
+        status: "upcoming",
+        isFeatured: true,
+        imageUrl: "https://i.imgur.com/0kIb4Kh.jpg"
+      },
+      {
+        title: "Hip-Hop Night",
+        date: new Date(now.getFullYear(), now.getMonth() + 2, now.getDate() + 15),
+        description: "Gloc-9 delivers powerful social commentary through his rap music in this special performance.",
+        venueId: 3,
+        artistId: 4,
+        status: "upcoming",
+        isFeatured: false,
+        imageUrl: "https://i.imgur.com/0kIb4Kh.jpg"
+      },
+      {
+        title: "Ely Buendia Live",
+        date: new Date(now.getFullYear(), now.getMonth() + 5, now.getDate()),
+        description: "The former Eraserheads frontman performs solo hits and classic songs in an intimate venue.",
+        venueId: 3,
+        artistId: 7,
         status: "upcoming",
         isFeatured: false,
         imageUrl: "https://i.imgur.com/0kIb4Kh.jpg"
