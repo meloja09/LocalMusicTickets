@@ -18,9 +18,9 @@ import { Skeleton } from "@/components/ui/skeleton";
 const ConcertsPage = () => {
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
   const [searchQuery, setSearchQuery] = useState("");
-  const [category, setCategory] = useState("");
-  const [location, setLocation] = useState("");
-  const [dateFilter, setDateFilter] = useState("");
+  const [category, setCategory] = useState("all-categories");
+  const [location, setLocation] = useState("all-locations");
+  const [dateFilter, setDateFilter] = useState("all-dates");
 
   const { data: concerts, isLoading } = useConcerts();
   const { data: categories, isLoading: categoriesLoading } = useCategories();
@@ -77,7 +77,7 @@ const ConcertsPage = () => {
                 <SelectValue placeholder="All Categories" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="">All Categories</SelectItem>
+                <SelectItem value="all-categories">All Categories</SelectItem>
                 {!categoriesLoading && categories?.map((cat) => (
                   <SelectItem key={cat.id} value={cat.name}>{cat.name}</SelectItem>
                 ))}
@@ -89,7 +89,7 @@ const ConcertsPage = () => {
                 <SelectValue placeholder="All Locations" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="">All Locations</SelectItem>
+                <SelectItem value="all-locations">All Locations</SelectItem>
                 <SelectItem value="manila">Manila</SelectItem>
                 <SelectItem value="cebu">Cebu</SelectItem>
                 <SelectItem value="davao">Davao</SelectItem>
@@ -103,7 +103,7 @@ const ConcertsPage = () => {
                 <SelectValue placeholder="All Dates" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="">All Dates</SelectItem>
+                <SelectItem value="all-dates">All Dates</SelectItem>
                 <SelectItem value="today">Today</SelectItem>
                 <SelectItem value="tomorrow">Tomorrow</SelectItem>
                 <SelectItem value="weekend">This Weekend</SelectItem>
@@ -182,8 +182,7 @@ const ConcertsPage = () => {
                     </span>
                     <span className="text-sm text-neutral-600 bg-neutral-100 px-2 py-1 rounded flex items-center">
                       <MapPin className="h-3 w-3 mr-1" />
-                      {/* Venue name would normally come from joined data */}
-                      Venue
+                      {concert.venue?.name || "Venue"}
                     </span>
                   </div>
                   <h3 className="font-bold text-xl mb-2">{concert.title}</h3>
@@ -212,9 +211,9 @@ const ConcertsPage = () => {
             </p>
             <Button onClick={() => {
               setSearchQuery("");
-              setCategory("");
-              setLocation("");
-              setDateFilter("");
+              setCategory("all-categories");
+              setLocation("all-locations");
+              setDateFilter("all-dates");
             }}>
               Clear Filters
             </Button>

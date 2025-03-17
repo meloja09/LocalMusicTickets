@@ -375,7 +375,7 @@ const AdminConcerts = () => {
                                   </FormControl>
                                   <SelectContent>
                                     {artistsLoading ? (
-                                      <SelectItem value="" disabled>Loading...</SelectItem>
+                                      <SelectItem value="loading" disabled>Loading...</SelectItem>
                                     ) : artists && artists.length > 0 ? (
                                       artists.map((artist) => (
                                         <SelectItem key={artist.id} value={artist.id.toString()}>
