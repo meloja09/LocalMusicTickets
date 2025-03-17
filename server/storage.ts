@@ -142,61 +142,61 @@ export class MemStorage implements IStorage {
         name: "Sarah Geronimo",
         genre: "Pop",
         bio: "Sarah Geronimo is a Filipino singer, actress and television personality. She began her career with the release of her debut album in 2003.",
-        imageUrl: "https://i.imgur.com/X0xNoXu.jpg"
+        imageUrl: "https://images.unsplash.com/photo-1604537466158-719b1972feb8?q=80&w=400&auto=format&fit=crop"
       },
       {
         name: "Bamboo",
         genre: "Rock",
         bio: "Bamboo is one of the most influential rock musicians in the Philippines, known as the vocalist of bands such as Bamboo and Rivermaya.",
-        imageUrl: "https://i.imgur.com/aVnJnuC.jpg"
+        imageUrl: "https://images.unsplash.com/photo-1574161340839-1f1b8802bad9?q=80&w=400&auto=format&fit=crop"
       },
       {
         name: "Ben&Ben",
         genre: "Folk",
         bio: "Ben&Ben is a nine-piece Filipino folk-pop band known for their heartfelt lyrics and unique sound that combines traditional Filipino folk with contemporary elements.",
-        imageUrl: "https://i.imgur.com/9VX12CQ.jpg"
+        imageUrl: "https://images.unsplash.com/photo-1524508762098-fd966ffb6ef9?q=80&w=400&auto=format&fit=crop"
       },
       {
         name: "Gloc-9",
         genre: "Hip-Hop",
         bio: "Gloc-9 is a Filipino rapper, songwriter, and record producer. He is considered one of the most successful and respected Filipino rappers.",
-        imageUrl: "https://i.imgur.com/jzuVkIM.jpg"
+        imageUrl: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=400&auto=format&fit=crop"
       },
       {
         name: "Moira Dela Torre",
         genre: "Pop",
         bio: "Moira Dela Torre is a Filipino singer-songwriter known for her emotional ballads and heartfelt performances. She rose to fame after joining 'The Voice of the Philippines'.",
-        imageUrl: "https://i.imgur.com/X0xNoXu.jpg"
+        imageUrl: "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=400&auto=format&fit=crop"
       },
       {
         name: "Eraserheads",
         genre: "Rock",
         bio: "Eraserheads is one of the most iconic Filipino bands of all time, often compared to The Beatles for their influence on Philippine music. Their songs have become anthems for generations of Filipinos.",
-        imageUrl: "https://i.imgur.com/aVnJnuC.jpg"
+        imageUrl: "https://images.unsplash.com/photo-1501612780327-45045538702b?q=80&w=400&auto=format&fit=crop"
       },
       {
         name: "Ely Buendia",
         genre: "Rock",
         bio: "Ely Buendia is a Filipino musician, writer and director who is best known as the vocalist, guitarist and main songwriter of the legendary Filipino rock band Eraserheads.",
-        imageUrl: "https://i.imgur.com/aVnJnuC.jpg"
+        imageUrl: "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?q=80&w=400&auto=format&fit=crop"
       },
       {
         name: "Parokya ni Edgar",
         genre: "Rock",
         bio: "Parokya ni Edgar is a Filipino band formed in 1993, known for their humorous lyrics and versatile musical style that combines rock with other genres.",
-        imageUrl: "https://i.imgur.com/aVnJnuC.jpg"
+        imageUrl: "https://images.unsplash.com/photo-1598387846254-9f6ccbb158ce?q=80&w=400&auto=format&fit=crop"
       },
       {
         name: "SB19",
         genre: "Pop",
         bio: "SB19 is a Filipino boy band trained under a Korean entertainment company. They are credited as the first Filipino idol group that has been trained under a Korean entertainment company.",
-        imageUrl: "https://i.imgur.com/X0xNoXu.jpg"
+        imageUrl: "https://images.unsplash.com/photo-1577741314755-048d8525d31e?q=80&w=400&auto=format&fit=crop"
       },
       {
         name: "December Avenue",
         genre: "Rock",
         bio: "December Avenue is a Filipino rock band formed in 2008. Their music mainly revolves around the subject of love and romantic relationships.",
-        imageUrl: "https://i.imgur.com/aVnJnuC.jpg"
+        imageUrl: "https://images.unsplash.com/photo-1564758866811-4730f2437e6f?q=80&w=400&auto=format&fit=crop"
       }
     ];
     
@@ -211,21 +211,21 @@ export class MemStorage implements IStorage {
         address: "Araneta City, Cubao, Quezon City",
         location: "Quezon City",
         capacity: 15000,
-        imageUrl: "https://i.imgur.com/Y4jhrWn.jpg"
+        imageUrl: "https://images.unsplash.com/photo-1556035511-3168381ea4d4?q=80&w=400&auto=format&fit=crop"
       },
       {
         name: "Mall of Asia Arena",
         address: "Mall of Asia Complex, Pasay City",
         location: "Pasay City",
         capacity: 20000,
-        imageUrl: "https://i.imgur.com/Y4jhrWn.jpg"
+        imageUrl: "https://images.unsplash.com/photo-1560281056-7fa93056a782?q=80&w=400&auto=format&fit=crop"
       },
       {
         name: "Music Museum",
         address: "Greenhills Shopping Center, San Juan City",
         location: "San Juan",
         capacity: 800,
-        imageUrl: "https://i.imgur.com/Y4jhrWn.jpg"
+        imageUrl: "https://images.unsplash.com/photo-1521070144638-767ffe2fd402?q=80&w=400&auto=format&fit=crop"
       }
     ];
     
@@ -247,7 +247,7 @@ export class MemStorage implements IStorage {
         artistId: 1,
         status: "upcoming",
         isFeatured: true,
-        imageUrl: "https://i.imgur.com/0kIb4Kh.jpg"
+        imageUrl: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=400&auto=format&fit=crop"
       },
       {
         title: "Rock Legends",
@@ -257,7 +257,7 @@ export class MemStorage implements IStorage {
         artistId: 2,
         status: "upcoming",
         isFeatured: true,
-        imageUrl: "https://i.imgur.com/0kIb4Kh.jpg"
+        imageUrl: "https://images.unsplash.com/photo-1560452992-e3c28ffc7432?q=80&w=400&auto=format&fit=crop"
       },
       {
         title: "Folk Tales",
@@ -267,7 +267,7 @@ export class MemStorage implements IStorage {
         artistId: 3,
         status: "upcoming",
         isFeatured: false,
-        imageUrl: "https://i.imgur.com/0kIb4Kh.jpg"
+        imageUrl: "https://images.unsplash.com/photo-1471478331149-c72f17e33c73?q=80&w=400&auto=format&fit=crop"
       },
       {
         title: "Words & Melodies",
@@ -277,7 +277,7 @@ export class MemStorage implements IStorage {
         artistId: 5,
         status: "upcoming",
         isFeatured: true,
-        imageUrl: "https://i.imgur.com/0kIb4Kh.jpg"
+        imageUrl: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=400&auto=format&fit=crop"
       },
       {
         title: "OPM Reunion",
@@ -287,7 +287,7 @@ export class MemStorage implements IStorage {
         artistId: 6,
         status: "upcoming",
         isFeatured: true,
-        imageUrl: "https://i.imgur.com/0kIb4Kh.jpg"
+        imageUrl: "https://images.unsplash.com/photo-1598517531458-8e7ee53d0599?q=80&w=400&auto=format&fit=crop"
       },
       {
         title: "Manila Sound",
@@ -297,7 +297,7 @@ export class MemStorage implements IStorage {
         artistId: 8,
         status: "upcoming",
         isFeatured: false,
-        imageUrl: "https://i.imgur.com/0kIb4Kh.jpg"
+        imageUrl: "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?q=80&w=400&auto=format&fit=crop"
       },
       {
         title: "Pinoy Pride",
@@ -307,7 +307,7 @@ export class MemStorage implements IStorage {
         artistId: 9,
         status: "upcoming",
         isFeatured: true,
-        imageUrl: "https://i.imgur.com/0kIb4Kh.jpg"
+        imageUrl: "https://images.unsplash.com/photo-1501612780327-45045538702b?q=80&w=400&auto=format&fit=crop"
       },
       {
         title: "Hip-Hop Night",
@@ -317,7 +317,7 @@ export class MemStorage implements IStorage {
         artistId: 4,
         status: "upcoming",
         isFeatured: false,
-        imageUrl: "https://i.imgur.com/0kIb4Kh.jpg"
+        imageUrl: "https://images.unsplash.com/photo-1564585222527-c2777a5bc6cb?q=80&w=400&auto=format&fit=crop"
       },
       {
         title: "Ely Buendia Live",
