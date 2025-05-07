@@ -1,0 +1,18 @@
+# Use the official Node.js 20 image as a parent image
+FROM node:20-alpine
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy package files
+COPY package.json package-lock.json* ./
+
+# Install all dependencies
+RUN npm install
+
+# Use the tsx package for TypeScript execution
+RUN npm install -g tsx
+
+# The command will be specified in docker-compose.dev.yml
+# Using a volume mount for development
+# so no need to copy files here

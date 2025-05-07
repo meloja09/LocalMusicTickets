@@ -4,20 +4,21 @@ FROM node:20-alpine
 # Set the working directory in the container
 WORKDIR /app
 
-# Copy package.json and package-lock.json
-COPY package*.json ./
+# Copy package files first (for better caching)
+COPY package.json package-lock.json* ./
 
-# Install dependencies including development dependencies which include Vite
+# Install all dependencies including development dependencies
 RUN npm install --include=dev
 
 # Copy the rest of the application
 COPY . .
 
-# Build the client with explicit access to node_modules binaries
-RUN NODE_ENV=production npx vite build
+# Build the client and server
+RUN NODE_ENV=production npx vite build && \
+    npx esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist
 
 # Expose port 5000 for the application
 EXPOSE 5000
 
 # Define the command to run the application
-CMD ["npm", "run", "start"]
+CMD ["node", "dist/index.js"]
