@@ -9,10 +9,6 @@ services:
       - "5000:5000"
     environment:
       - NODE_ENV=production
-    volumes:
-      - ./:/app
-      - /app/node_modules
-      - /app/dist
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "wget", "--spider", "http://localhost:5000"]
