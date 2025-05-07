@@ -7,14 +7,14 @@ WORKDIR /app
 # Copy package.json and package-lock.json
 COPY package*.json ./
 
-# Install dependencies
-RUN npm install
+# Install dependencies including development dependencies which include Vite
+RUN npm install --include=dev
 
 # Copy the rest of the application
 COPY . .
 
-# Build the client
-RUN npm run build
+# Build the client with explicit access to node_modules binaries
+RUN NODE_ENV=production npx vite build
 
 # Expose port 5000 for the application
 EXPOSE 5000
